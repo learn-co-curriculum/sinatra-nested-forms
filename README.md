@@ -4,6 +4,7 @@ languages: ruby, html
 ---
 
 ## Instructions
+
   - Note: YOU DO NOT NEED A DATABASE, we just need to keep track of the forms input long enough to display it, not persist it.  I don't expect the pirate to be there the next time I come to his URL, but it'd be cool if he was.
 
   - Decide what objects/models you want to use, I used pirates and ships, you can use this or anything else.
@@ -25,6 +26,7 @@ Often in web application development you'd like to have a form that will update 
 Let's say we're building a web application that had pirates and ships.
 
 When we create a typical form we can do something like this where pirate is the class of the object we are working with.
+
 ```html
 <form action='/pirate' method="POST">
   <input ... name="pirate[name]" />
