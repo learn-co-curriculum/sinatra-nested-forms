@@ -1,6 +1,6 @@
 ---
-tags: forms, nested forms
-languages: ruby, html
+  tags: forms, nested forms
+  languages: ruby, html
   resources: 2
 ---
 
