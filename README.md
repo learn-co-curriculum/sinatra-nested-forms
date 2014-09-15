@@ -1,5 +1,5 @@
 ---
-  tags: forms, nested forms
+  tags: forms, nested forms, sinatra
   languages: ruby, html
   resources: 2
 ---
