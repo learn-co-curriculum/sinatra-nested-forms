@@ -12,11 +12,11 @@ In this lab, you'll practice using nested forms in Sinatra.
 
 ## Instructions
 
-- Note: YOU DO NOT NEED A DATABASE, we just need to keep track of the forms input long enough to display it, not persist it.  I don't expect the pirate to be there the next time I come to his URL, but it'd be cool if he was.
+- Note: YOU DO NOT NEED A DATABASE, we just need to keep track of the forms input long enough to display it, not persist it.  I don't expect the pirate to be there the next student I come to his URL, but it'd be cool if he student
 
-- Decide what objects/models you want to use, I used pirates and ships, you can use this or anything else.
+- In this lab, you'll be using pirates and ships as your models.
 
-- Other examples: Artists and Songs, Programmers and Languages they know, Schools and Students
+- Other examples of models we've used thus far: Artists and Songs, Programmers and Languages they know, Schools and Students
 
 - Make a nested form (this should probably have html `<label>`s so it makes sense to a user).
 
@@ -30,15 +30,15 @@ In this lab, you'll practice using nested forms in Sinatra.
 
 Often in web application development you'd like to have a form that will update multiple related objects at once.
 
-Let's say we're building a web application that had pirates and ships.
+Let's say we're building a web application that had students and schools.
 
 When we create a typical form we can do something like this where pirate is the class of the object we are working with.
 
 ```html
-<form action='/pirates' method="POST">
-  <input ... name="pirate[name]" />
-  <input ... name="pirate[weight]" />
-  <input ... name="pirate[height]" />
+<form action='/students' method="POST">
+  <input ... name="student[name]" />
+  <input ... name="student[weight]" />
+  <input ... name="student[height]" />
   <input type="submit" value="submit">
 </form>
 ```
@@ -46,38 +46,38 @@ When we create a typical form we can do something like this where pirate is the 
 On the sinatra side we'd have some routes like
 
 ```ruby
-post '/pirates' do
-  @pirate = Pirate.new
-  @pirate.name = params[:pirate][:name]
-  @pirate.weight = params[:pirate][:weight]
-  @pirate.height = params[:pirate][:height]
-  @pirate.save
+post '/students' do
+  @student = Student.new
+  @student.name = params[:student][:name]
+  @student.weight = params[:student][:weight]
+  @student.height = params[:student][:height]
+  @student.save
 end
 ```
 
-This would create a new pirate in our database (assuming we're using the student ORM we built)
+This would create a new student in our database (assuming we're using the student ORM we built)
 
-What if pirates also had ships! Could we create a pirate and a ship at the same time?
+What if students also had schools! Could we assign a student to several schools? Certainly!
 
-Let's say ships have names, types, and booty
+Let's say schools have names, locations, and classifications.
 
 ```html
 <form action='/pirates' method="POST">
-  <input ... name="pirate[name]" />
-  <input ... name="pirate[weight]" />
-  <input ... name="pirate[height]" />
-  <input ... name="pirate[ships][0][name]" />
-  <input ... name="pirate[ships][0][type]" />
-  <input ... name="pirate[ships][0][booty]" />
-  <input ... name="pirate[ships][1][name]" />
-  <input ... name="pirate[ships][1][type]" />
-  <input ... name="pirate[ships][1][booty]" />
+  <input ... name="student[name]" />
+  <input ... name="student[weight]" />
+  <input ... name="student[height]" />
+  <input ... name="student[schools][0][name]" />
+  <input ... name="student[schools][0][location]" />
+  <input ... name="student[schools][0][classification]" />
+  <input ... name="student[schools][1][name]" />
+  <input ... name="student[schools][1][location]" />
+  <input ... name="student[schools][1][classification]" />
   <input type="submit" value="submit" />
 </form>
 ```
 
 ```ruby
-post '/pirates' do
+post '/students' do
 
   <!-- try dropping the debugger in here and seeing what the params hash is -->
 
@@ -85,26 +85,26 @@ end
 ```
 
 ```
-As you can see we constructured a nice data structure for ourselves
-pirate
+As you can see we constructed a nice data structure for ourselves
+student
     name
     weight
     height
-    ships
+    schools
         0
             name
                 dawn treader
-            type
-                wood
-            booty
-                so much
+            location
+                peter pan's world
+            classification
+                adventure
         1
             name
                 mayflower
-            type
-                wood
-            booty
-                not very much
+            location
+                atlantic ocean circa 1492
+            classification
+                colonialization
 ```
 
 ## **BONUS**
