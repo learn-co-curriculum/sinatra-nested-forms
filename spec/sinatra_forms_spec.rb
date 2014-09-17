@@ -25,10 +25,27 @@ describe "FormsLab::App" do
       expect(last_response.status).to eq(200)
     end
 
-    it "renders a new form" do
+    it "renders a new form element on the page" do
       expect(last_response.body).to include("<form")
+      expect(last_response.body).to include("</form>")
+    end
+
+    it "renders the pirate input fields for name, weight, and height attributes on the page" do
+      expect(last_response.body).to include("pirate[name]")
       expect(last_response.body).to include("pirate[weight]")
+      expect(last_response.body).to include("pirate[height]")
+    end
+
+    it "renders the first ship's input fields for the name, type, and booty attributes on the page" do
+      expect(last_response.body).to include("ship[0][name]")
+      expect(last_response.body).to include("ship[0][type]")
+      expect(last_response.body).to include("ship[0][booty]")
+    end
+
+    it "renders the second ship's input field for the name, type, and booty attributes on the page" do
+      expect(last_response.body).to include("ship[1][name]")
       expect(last_response.body).to include("ship[1][type]")
+      expect(last_response.body).to include("ship[1][booty]")
     end
   end
 
@@ -52,6 +69,28 @@ describe "FormsLab::App" do
           }
         }
       }
+    end
+
+    it "returns a 200 status code" do
+      expect(last_response.status).to eq(200)
+    end
+
+    it "displays the pirate information upon form submission" do
+      expect(last_response.body).to include("Ian")
+      expect(last_response.body).to include("165")
+      expect(last_response.body).to include("95")
+    end
+
+    it "displays the first ship's information upon form submission" do
+      expect(last_response.body).to include("Titanic")
+      expect(last_response.body).to include("Steam Liner")
+      expect(last_response.body).to include("Silver")
+    end
+
+    it "displays the second ship's information upon form submission" do
+      expect(last_response.body).to include("Carpathia")
+      expect(last_response.body).to include("Rescue Ship")
+      expect(last_response.body).to include("Inner Tubes")
     end
   end
 end
