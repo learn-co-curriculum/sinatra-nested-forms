@@ -26,38 +26,38 @@ In this lab, you'll practice using nested forms in Sinatra.
 
 Often in web application development you'd like to have a form that will update multiple related objects at once.
 
-When we create a typical form we can do something like this where pirate is the class of the object we are working with.
+When we create a typical form we can do something like this where student is the class of the object we are working with.
 
 ```html
-<form action='/pirates' method="POST">
-  <input ... name="pirate[name]" />
-  <input ... name="pirate[weight]" />
-  <input ... name="pirate[height]" />
+<form action='/students' method="POST">
+  <input ... name="student[name]" />
+  <input ... name="student[age]" />
+  <input ... name="student[level]" />
   <input type="submit" value="submit">
 </form>
 ```
 
-What if pirates also had ships! Could we create a pirate and a ship at the same time?
+What if students also had classes! Could we create a student and a class at the same time?
 
-Let's say ships have names, types, and booty:
+Let's say classes have names, grade, and topics:
 
 ```html
-<form action='/pirates' method="POST">
-  <input ... name="pirate[name]" />
-  <input ... name="pirate[weight]" />
-  <input ... name="pirate[height]" />
-  <input ... name="pirate[ships][0][name]" />
-  <input ... name="pirate[ships][0][type]" />
-  <input ... name="pirate[ships][0][booty]" />
-  <input ... name="pirate[ships][1][name]" />
-  <input ... name="pirate[ships][1][type]" />
-  <input ... name="pirate[ships][1][booty]" />
+<form action='/students' method="POST">
+  <input ... name="student[name]" />
+  <input ... name="student[age]" />
+  <input ... name="student[level]" />
+  <input ... name="student[class][0][name]" />
+  <input ... name="student[class][0][grade]" />
+  <input ... name="student[class][0][topic]" />
+  <input ... name="student[class][1][name]" />
+  <input ... name="student[class][1][grade]" />
+  <input ... name="student[class][1][topic]" />
   <input type="submit" value="submit" />
 </form>
 ```
 
 ```ruby
-post '/pirates' do
+post '/students' do
 
   <!-- try dropping the debugger in here and seeing what the params hash is -->
 
@@ -68,23 +68,23 @@ end
 As you can see we constructured a nice data structure for ourselves
 pirate
     name
-    weight
-    height
-    ships
+    age
+    level
+    classes
         0
             name
-                dawn treader
-            type
-                wood
-            booty
-                so much
+                english
+            grade
+                A
+            topic
+                shakespeare
         1
             name
-                mayflower
-            type
-                wood
-            booty
-                not very much
+                math
+            grade
+                B
+            topic
+                geometry
 ```
 
 ## **BONUS**
