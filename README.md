@@ -66,7 +66,7 @@ end
 
 ```
 As you can see we constructured a nice data structure for ourselves
-pirate
+student
     name
     age
     level
