@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe "FormsLab::App" do
   describe "GET '/'" do
     before(:each) do
