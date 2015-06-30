@@ -1,1 +1,28 @@
-<h1>Make your form here</h1>
+<h1>Create a New Pirate</h1>
+<form action="/pirates" method="POST">
+  <label for='pirate[name]'>Name</label>
+  <input type='text' name='pirate[name]'>
+  
+  <label for='pirate[weight]'>Weight</label>
+  <input type='number' name='pirate[weight]'>
+
+  <label for='pirate[height]'>Height</label>
+  <input type='number' name='pirate[height]'>
+
+  <h3>Ships</h3>
+  <ol>
+  <% 3.times do |n| %>
+    <li>
+      <label for='pirate[ships][<%=n%>][name]'>Name</label>
+      <input type='text' name='pirate[ships][<%=n%>][name]'>
+
+      <label for='pirate[ships][<%=n%>][type]'>Type</label>
+      <input type='text' name='pirate[ships][<%=n%>][type]'>
+
+      <label for='pirate[ships][<%=n%>][booty]'>Booty</label>
+      <input type='text' name='pirate[ships][<%=n%>][booty]'>
+    </li>
+  <% end %>
+  </ol>
+  <button type='submit'>Submit</button>
+</form>

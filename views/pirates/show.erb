@@ -1,7 +1,21 @@
 <h1>Display your Pirate here</h1>
+Name:
+<%= @pirate[:name] %>
+
+Weight:
+<%= @pirate[:weight] %>
+
+Height:
+<%= @pirate[:height] %>
+
+<% @pirate[:ships].each do |number, attributes| %>
+  <% attributes.each do |attribute, value| %>
+    <%= attribute.capitalize %>:
+    <%= value %>
+  <% end %>
+<% end %>
+
+<!-- <h2>Display your first ship here</h2>
 
 
-<h2>Display your first ship here</h2>
-
-
-<h2>Display your second ship here</h2>
+<h2>Display your second ship here</h2> -->
