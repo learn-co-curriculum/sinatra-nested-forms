@@ -1,8 +1,4 @@
----
-  tags: forms, nested forms, sinatra, intermediate
-  languages: ruby, html
-  resources: 2
----
+
 
 # Pirates!
 
