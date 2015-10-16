@@ -90,4 +90,3 @@ student
 
 ## Resources
 * [Surreal Detective](http://surrealdetective.github.io/) - [The Nested Ruby Params Hash for Complex HTML Forms and Sinatra](http://surrealdetective.github.io/blog/2013/07/01/the-nested-ruby-params-hash-for-complex-html-forms-and-sinatra/)
-* [Sinatra: The Book](http://sinatra.restafari.org/book.html) - [Handling of Rails like nested params](http://sinatra.restafari.org/book.html#handling_of_rails_like_nested_params)
