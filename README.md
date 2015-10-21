@@ -18,7 +18,7 @@ In this lab, you'll practice using nested forms in Sinatra.
 
 - This is an excercise in REST conventions, HTML forms and params.  Please use the debugger and/or puts to see how changing the type of HTML you use changes the params. Spend some time thinking about your routes.
 
-- Keep in mind this lab is using Capybara. So the last test will look for a button on your `new.erb` file with a value of `"Submit"`.
+- Keep in mind this lab is using Capybara. The last test will look for a button on your `new.erb` file with a value of `"Submit"`.
 
 ## Example
 
