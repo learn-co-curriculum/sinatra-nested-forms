@@ -18,6 +18,8 @@ In this lab, you'll practice using nested forms in Sinatra.
 
 - This is an excercise in REST conventions, HTML forms and params.  Please use the debugger and/or puts to see how changing the type of HTML you use changes the params. Spend some time thinking about your routes.
 
+- Keep in mind this lab is using Capybara. So the last test will look for a button on your `new.erb` file with a value of `"Submit"`.
+
 ## Example
 
 Often in web application development you'd like to have a form that will update multiple related objects at once.
@@ -29,7 +31,7 @@ When we create a typical form we can do something like this where student is the
   <input ... name="student[name]" />
   <input ... name="student[age]" />
   <input ... name="student[level]" />
-  <input type="submit" value="submit">
+  <input type="submit" value="Submit">
 </form>
 ```
 
@@ -48,7 +50,7 @@ Let's say classes have names, grade, and topics:
   <input ... name="student[class][1][name]" />
   <input ... name="student[class][1][grade]" />
   <input ... name="student[class][1][topic]" />
-  <input type="submit" value="submit" />
+  <input type="submit" value="Submit" />
 </form>
 ```
 
