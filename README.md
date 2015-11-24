@@ -1,9 +1,3 @@
----
-  tags: forms, nested forms, sinatra, intermediate
-  languages: ruby, html
-  resources: 2
----
-
 # Pirates!
 
 ## Description
@@ -19,12 +13,6 @@ Note: YOU DO NOT NEED A DATABASE, we just need to keep track of the forms input 
 - Make a nested form (this should probably have html `<label>`s so it makes sense to a user). This form will be creating three objects (one instance of the Pirate class, and two instances of the Ship class). Remember, you'll need to build a corresponding controller action to load this page. Your form should POST to the route '/pirates'.
 
 - After a user clicks submit they should be taken to a page that displays all the information we just posted from the form.  You should have a page that shows the pirate you created along with his ships and all the details about the pirate and his ships.
-
-
-## **BONUS**
-
-1. Back the whole thing with a database using ActiveRecord
-2. Convert it into a modular-style Sinatra application (e.g., with an ApplicationController and a PiratesController)
 
 ## Resources
 * [Surreal Detective](http://surrealdetective.github.io/) - [The Nested Ruby Params Hash for Complex HTML Forms and Sinatra](http://surrealdetective.github.io/blog/2013/07/01/the-nested-ruby-params-hash-for-complex-html-forms-and-sinatra/)
