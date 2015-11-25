@@ -35,15 +35,15 @@ describe "FormsLab::App" do
     end
 
     it "renders the first ship's input fields for the name, type, and booty attributes on the page" do
-      expect(last_response.body).to include("pirate[ships][0][name]")
-      expect(last_response.body).to include("pirate[ships][0][type]")
-      expect(last_response.body).to include("pirate[ships][0][booty]")
+      expect(last_response.body).to include("pirate[ships][][name]")
+      expect(last_response.body).to include("pirate[ships][][type]")
+      expect(last_response.body).to include("pirate[ships][][booty]")
     end
 
     it "renders the second ship's input field for the name, type, and booty attributes on the page" do
-      expect(last_response.body).to include("pirate[ships][1][name]")
-      expect(last_response.body).to include("pirate[ships][1][type]")
-      expect(last_response.body).to include("pirate[ships][1][booty]")
+      expect(last_response.body).to include("pirate[ships][][name]")
+      expect(last_response.body).to include("pirate[ships][][type]")
+      expect(last_response.body).to include("pirate[ships][][booty]")
     end
   end
 
@@ -54,17 +54,18 @@ describe "FormsLab::App" do
           "name"=>"Ian",
           "weight"=>"165",
           "height"=>"95",
-          "ships"=> {
-          "0"=> {
-            "name"=>"Titanic",
-            "type"=>"Steam Liner",
-            "booty"=>"Silver"},
-          "1"=> {
-            "name"=> "Carpathia",
-            "type"=>"Rescue Ship",
-            "booty"=>"Inner Tubes"
-          }
-        }
+          "ships"=> [
+            {
+              "name"=>"Titanic",
+              "type"=>"Steam Liner",
+              "booty"=>"Silver"
+            },
+            {
+              "name"=> "Carpathia",
+              "type"=>"Rescue Ship",
+              "booty"=>"Inner Tubes"
+            }
+          ]
         }
       }
     end
