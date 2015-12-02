@@ -92,3 +92,5 @@ student
 
 ## Resources
 * [Surreal Detective](http://surrealdetective.github.io/) - [The Nested Ruby Params Hash for Complex HTML Forms and Sinatra](http://surrealdetective.github.io/blog/2013/07/01/the-nested-ruby-params-hash-for-complex-html-forms-and-sinatra/)
+
+<a href='https://learn.co/lessons/sinatra-nested-forms' data-visibility='hidden'>View this lesson on Learn.co</a>
