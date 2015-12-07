@@ -4,19 +4,24 @@ context "Filling in the Form" do
   end
 
   it "can fill in forms for a pirate and two ships" do
-    contents = ["Captain Jack Sparrow", "190 lbs", "5 feet 11 inches", "Flying Dutchman", "ghost ship", "gold coins", "Black Pearl", "merchant vessel", "teasure map"]
-    fill_in("pirate[name]", :with => contents[0])
-    fill_in("pirate[weight]", :with => contents[1])
-    fill_in("pirate[height]", :with => contents[2])
-    fill_in("ship_name_1", :with => contents[3])
-    fill_in("ship_type_1", :with => contents[4])
-    fill_in("ship_booty_1", :with => contents[5])
-    fill_in("ship_name_2", :with => contents[6])
-    fill_in("ship_type_2", :with => contents[7])
-    fill_in("ship_booty_2", :with => contents[8])
+    fill_in("pirate[name]", :with => "Captain Jack Sparrow")
+    fill_in("pirate[weight]", :with => "190 lbs")
+    fill_in("pirate[height]", :with => "5 feet 11 inches")
+    fill_in("ship_name_1", :with => "Flying Dutchman")
+    fill_in("ship_type_1", :with => "ghost ship")
+    fill_in("ship_booty_1", :with => "gold coins")
+    fill_in("ship_name_2", :with => "Black Pearl")
+    fill_in("ship_type_2", :with => "merchant vessel")
+    fill_in("ship_booty_2", :with => "treasure map")
     click_button('Submit')
-    contents.each do |content|
-      expect(page).to have_content(content)
-    end
+    expect(page).to have_content("Captain Jack Sparrow")
+    expect(page).to have_content("190 lbs")
+    expect(page).to have_content("5 feet 11 inches")
+    expect(page).to have_content("Flying Dutchman")
+    expect(page).to have_content("ghost ship")
+    expect(page).to have_content("gold coins")
+    expect(page).to have_content("Black Pearl")
+    expect(page).to have_content("merchant vessel")
+    expect(page).to have_content("treasure map")
   end
 end
