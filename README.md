@@ -32,7 +32,6 @@ The word in quotes after fill_in needs to be set as an ID in the form. This is b
 
 ## Resources
 * [Surreal Detective](http://surrealdetective.github.io/) - [The Nested Ruby Params Hash for Complex HTML Forms and Sinatra](http://surrealdetective.github.io/blog/2013/07/01/the-nested-ruby-params-hash-for-complex-html-forms-and-sinatra/)
-* [Sinatra: The Book](http://sinatra.restafari.org/book.html) - [Handling of Rails like nested params](http://sinatra.restafari.org/book.html#handling_of_rails_like_nested_params)
 
 
 <a href='https://learn.co/lessons/sinatra-nested-forms' data-visibility='hidden'>View this lesson on Learn.co</a>
