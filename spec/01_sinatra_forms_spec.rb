@@ -71,7 +71,7 @@ describe "FormsLab::App" do
     end
 
     after do
-      @@ships = []
+      Ship.ships = []
     end
 
     it "returns a 200 status code" do
